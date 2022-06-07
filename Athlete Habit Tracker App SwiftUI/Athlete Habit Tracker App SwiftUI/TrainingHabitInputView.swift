@@ -29,8 +29,6 @@ struct TrainingHabitInputView: View {
                 TrainingHabitInputTextField(trainingHabit: trainingHabits[4], placeholder: "Stretching Time", value: $stretch)
                 TrainingHabitInputTextField(trainingHabit: trainingHabits[5], placeholder: "Workout Time", value: $workout)
                 */
-                MeasurementInputTextField(measurement: measurements[0], placeholder: "Current Weight", value: $currentWeight)
-                MeasurementInputTextField(measurement: measurements[1], placeholder: "Current Heart Rate", value: $currentHeartRate)
                 
                 Spacer()
             }
