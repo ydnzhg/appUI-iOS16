@@ -6,12 +6,9 @@
 //
 
 import SwiftUI
-import SwiftUICharts
 
 struct LoadCapacityPredictionView: View {
-    
-    var demoData: [Double] = [8, 2, 4, 6, 12, 9, 2]
-    
+        
     @Binding var trainingHabits: [TrainingHabit]
     
     @Binding var workoutInfo: WorkoutInfo
@@ -52,6 +49,7 @@ struct LoadCapacityPredictionView: View {
             }
             .padding()
             
+            /*
             CardView {
                 ChartLabel("Test", type: .title)
                 LineChart()
@@ -60,6 +58,7 @@ struct LoadCapacityPredictionView: View {
             .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: ColorGradient(Color.highblue.opacity(0.7), Color.highblue.opacity(0.4))))
             .frame(height: 300)
             .padding(.horizontal)
+             */
 
             
             /*

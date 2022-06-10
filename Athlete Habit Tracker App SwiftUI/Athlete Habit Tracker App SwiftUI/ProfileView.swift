@@ -106,7 +106,7 @@ struct ProfileView: View {
                 }
                 .sheet(isPresented: $isPresentingGoalEditView) {
                     NavigationView {
-                        GoalEditView(trainingHabits: $trainingHabits, measurements: Measurement.sampleData)
+                        GoalEditView(trainingHabits: $trainingHabits)
                             .navigationTitle("Change Goals")
                             .toolbar {
                                 ToolbarItem(placement: .cancellationAction) {

@@ -10,17 +10,6 @@ import SwiftUI
 struct GoalEditView: View {
     
     @Binding var trainingHabits: [TrainingHabit]
-    let measurements: [Measurement]
-    
-    @State private var sleepGoal = 0
-    @State private var hydrationGoal = 0
-    @State private var proteinGoal = 0
-    @State private var calorieGoal = 0
-    @State private var stretchingGoal = 0
-    @State private var workoutGoal = 0
-    @State private var weightGoal = 0
-    @State private var heartrateGoal = 0
-
     
     var body: some View {
         ScrollView {
@@ -48,7 +37,7 @@ struct GoalEditView: View {
 
 struct GoalEditView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalEditView(trainingHabits: .constant(TrainingHabit.sampleData), measurements: Measurement.sampleData)
+        GoalEditView(trainingHabits: .constant(TrainingHabit.sampleData))
     }
 }
 
@@ -84,6 +73,7 @@ struct TrainingHabitGoalTextField: View {
     }
 }
 
+/*
 struct MeasurementGoalTextField: View {
     
     var measurement: Measurement
@@ -116,3 +106,4 @@ struct MeasurementGoalTextField: View {
         .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
     }
 }
+*/

@@ -46,25 +46,9 @@
             filePath = "Athlete Habit Tracker App SwiftUI/Athlete_Habit_Tracker_App_SwiftUIApp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
-            landmarkName = "unknown"
-            landmarkType = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DC32528A-5A3F-4FBE-807C-297B4AC8FB48"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Athlete Habit Tracker App SwiftUI/DailyView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "DailyView"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "Athlete_Habit_Tracker_App_SwiftUIApp"
             landmarkType = "14">
          </BreakpointContent>
       </BreakpointProxy>

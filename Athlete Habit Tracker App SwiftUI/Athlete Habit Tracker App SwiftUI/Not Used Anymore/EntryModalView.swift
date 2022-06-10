@@ -16,6 +16,7 @@ struct EntryModalView: View {
     }
     
     var body: some View {
+            /*
             ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)) {
                 VStack(spacing: 15) {
                     Text("\(entry.title)")
@@ -67,6 +68,8 @@ struct EntryModalView: View {
                     .foregroundColor(.white)
             }
             .padding()
+            */
+            Text("sup")
     }
 }
 
@@ -76,6 +79,7 @@ struct HabitEntryModalView_Previews: PreviewProvider {
     }
 }
 
+/*
 struct BarView: View {
     var value: Int
     var day: String
@@ -151,3 +155,4 @@ struct MeasurementModalView: View {
             .padding()
     }
 }
+*/

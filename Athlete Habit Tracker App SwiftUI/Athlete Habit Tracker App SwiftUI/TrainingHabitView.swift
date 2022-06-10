@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUICharts
 
 struct TrainingHabitView: View {
     
@@ -14,6 +13,7 @@ struct TrainingHabitView: View {
 
     var body: some View {
         VStack {
+            /*
             CardView {
                 ChartLabel("This Week", type: .title)
                 BarChart()
@@ -22,7 +22,8 @@ struct TrainingHabitView: View {
             .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: ColorGradient(Color.highblue.opacity(0.4), Color.highblue.opacity(0.7))))
             .frame(height: 300)
             .padding(.horizontal)
-            
+             */
+            Text("Test")
             Spacer()
         }
         .navigationTitle("\(trainingHabit.title)")

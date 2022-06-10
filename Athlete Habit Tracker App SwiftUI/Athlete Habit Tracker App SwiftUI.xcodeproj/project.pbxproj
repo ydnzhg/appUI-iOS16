@@ -19,13 +19,11 @@
 		F4305DE1283B1B0400DAF303 /* EntryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4305DE0283B1B0400DAF303 /* EntryListView.swift */; };
 		F4593AF3283EC84A00CDCD62 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4593AF2283EC84A00CDCD62 /* Palette.swift */; };
 		F4593AF5283ECF1300CDCD62 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4593AF4283ECF1300CDCD62 /* QuoteView.swift */; };
-		F46FC96C2842DAC300B85568 /* Popovers in Frameworks */ = {isa = PBXBuildFile; productRef = F46FC96B2842DAC300B85568 /* Popovers */; };
 		F46FC96E2842DB1100B85568 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FC96D2842DB1100B85568 /* TestView.swift */; };
 		F46FC9722842FB4900B85568 /* InfoEditDraftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46FC9712842FB4900B85568 /* InfoEditDraftView.swift */; };
 		F4702CC6284123180044B66D /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4702CC5284123180044B66D /* AppView.swift */; };
 		F4750E16284D602700E1C78F /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4750E15284D602700E1C78F /* ProgressView.swift */; };
 		F4AE2A1828485B69007D48DF /* WorkoutInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4AE2A1728485B69007D48DF /* WorkoutInfo.swift */; };
-		F4AE2A1E28486E7B007D48DF /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = F4AE2A1D28486E7B007D48DF /* SwiftUICharts */; };
 		F4C88DA22843C98800888164 /* InfoEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C88DA12843C98800888164 /* InfoEditView.swift */; };
 		F4C88DA42844527400888164 /* GoalEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C88DA32844527400888164 /* GoalEditView.swift */; };
 		F4C88DA82844658E00888164 /* CalendarPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C88DA72844658E00888164 /* CalendarPopoverView.swift */; };
@@ -78,8 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F46FC96C2842DAC300B85568 /* Popovers in Frameworks */,
-				F4AE2A1E28486E7B007D48DF /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +115,7 @@
 				F4C88DA32844527400888164 /* GoalEditView.swift */,
 				F4C88DA12843C98800888164 /* InfoEditView.swift */,
 				F4305DD62839C24F00DAF303 /* InputView.swift */,
+				F46FC96D2842DB1100B85568 /* TestView.swift */,
 				F417262D2835EAF6007969E5 /* Assets.xcassets */,
 				F417262F2835EAF6007969E5 /* Preview Content */,
 			);
@@ -138,7 +135,6 @@
 			children = (
 				F4AE2A1728485B69007D48DF /* WorkoutInfo.swift */,
 				F4305DDE283B158200DAF303 /* TrainingHabit.swift */,
-				F4C88DAA28447DC100888164 /* Measurement.swift */,
 				F4F52756283D352300AE1C13 /* User.swift */,
 				F4593AF2283EC84A00CDCD62 /* Palette.swift */,
 			);
@@ -148,9 +144,9 @@
 		F4C88DA928446B5300888164 /* Not Used Anymore */ = {
 			isa = PBXGroup;
 			children = (
+				F4C88DAA28447DC100888164 /* Measurement.swift */,
 				F4305DDC2839D07200DAF303 /* Theme.swift */,
 				F4305DE0283B1B0400DAF303 /* EntryListView.swift */,
-				F46FC96D2842DB1100B85568 /* TestView.swift */,
 				F4593AF4283ECF1300CDCD62 /* QuoteView.swift */,
 				F4305DD82839C5D900DAF303 /* SummaryView.swift */,
 				F46FC9712842FB4900B85568 /* InfoEditDraftView.swift */,
@@ -179,8 +175,6 @@
 			);
 			name = "Athlete Habit Tracker App SwiftUI";
 			packageProductDependencies = (
-				F46FC96B2842DAC300B85568 /* Popovers */,
-				F4AE2A1D28486E7B007D48DF /* SwiftUICharts */,
 			);
 			productName = "Athlete Habit Tracker App SwiftUI";
 			productReference = F41726262835EAF5007969E5 /* Athlete Habit Tracker App SwiftUI.app */;
@@ -211,8 +205,6 @@
 			);
 			mainGroup = F417261D2835EAF4007969E5;
 			packageReferences = (
-				F46FC96A2842DAC300B85568 /* XCRemoteSwiftPackageReference "Popovers" */,
-				F4AE2A1C28486E7B007D48DF /* XCRemoteSwiftPackageReference "ChartView" */,
 			);
 			productRefGroup = F41726272835EAF5007969E5 /* Products */;
 			projectDirPath = "";
@@ -465,38 +457,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F46FC96A2842DAC300B85568 /* XCRemoteSwiftPackageReference "Popovers" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/aheze/Popovers";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		F4AE2A1C28486E7B007D48DF /* XCRemoteSwiftPackageReference "ChartView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AppPear/ChartView";
-			requirement = {
-				kind = exactVersion;
-				version = "2.0.0-beta.2";
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F46FC96B2842DAC300B85568 /* Popovers */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F46FC96A2842DAC300B85568 /* XCRemoteSwiftPackageReference "Popovers" */;
-			productName = Popovers;
-		};
-		F4AE2A1D28486E7B007D48DF /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F4AE2A1C28486E7B007D48DF /* XCRemoteSwiftPackageReference "ChartView" */;
-			productName = SwiftUICharts;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F417261E2835EAF4007969E5 /* Project object */;
 }

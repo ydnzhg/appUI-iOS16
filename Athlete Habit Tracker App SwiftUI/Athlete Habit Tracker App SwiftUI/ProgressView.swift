@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUICharts
 
 struct ProgressView: View {
     
@@ -18,6 +17,25 @@ struct ProgressView: View {
     
     var body: some View {
         VStack {
+            Picker(selection: $selectedTime, label: Text("")) {
+                Text("Last Week").tag(0)
+                Text("Last 2 Weeks").tag(1)
+                Text("Last Month").tag(2)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.horizontal)
+                    
+            // add dates
+            /*
+            CardView {
+                ChartLabel("", type: .title)
+                BarChart()
+            }
+            .data(trainingHabits[selectedHabit].lastWeek.map { Double($0) })
+            .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: ColorGradient(Color.highblue.opacity(0.4), Color.highblue.opacity(0.7))))
+            .frame(height: 300)
+            .padding(.horizontal)
+             */
             
             Picker(
                 selection: $selectedHabit,
@@ -44,25 +62,8 @@ struct ProgressView: View {
                 })
             .pickerStyle(MenuPickerStyle())
             
-            Picker(selection: $selectedTime, label: Text("")) {
-                Text("Last Week").tag(0)
-                Text("Last 2 Weeks").tag(1)
-                Text("Last Month").tag(2)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal)
-                    
-            // add dates
-            CardView {
-                ChartLabel("", type: .title)
-                BarChart()
-            }
-            .data(trainingHabits[selectedHabit].lastWeek.map { Double($0) })
-            .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: ColorGradient(Color.highblue.opacity(0.4), Color.highblue.opacity(0.7))))
-            .frame(height: 300)
-            .padding(.horizontal)
-            
             Spacer()
+            
         }
     }
 }

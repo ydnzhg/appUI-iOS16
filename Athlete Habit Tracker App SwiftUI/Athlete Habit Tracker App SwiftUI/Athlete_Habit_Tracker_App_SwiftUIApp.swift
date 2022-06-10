@@ -20,8 +20,7 @@ struct Athlete_Habit_Tracker_App_SwiftUIApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AppView(user: $user, trainingHabits: $trainingHabits, workoutInfo: $workoutInfo, measurements: Measurement.sampleData)
-
+            AppView(user: $user, trainingHabits: $trainingHabits, workoutInfo: $workoutInfo)
         }
     }
 }

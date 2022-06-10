@@ -13,7 +13,6 @@ struct DailyView: View {
     @State var isPresentingTrainingHabitInputView = false
     
     @Binding var trainingHabits: [TrainingHabit]
-    let measurements: [Measurement]
     
     var columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 2)
     
@@ -103,7 +102,7 @@ struct DailyView: View {
                 , alignment: .bottomTrailing)
         .sheet(isPresented: $isPresentingTrainingHabitInputView) {
             NavigationView {
-                TrainingHabitInputView(trainingHabits: $trainingHabits, measurements: measurements)
+                TrainingHabitInputView(trainingHabits: $trainingHabits)
                     .navigationTitle("Input Today's Info")
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
@@ -124,7 +123,7 @@ struct DailyView: View {
 
 struct DailyView_Previews: PreviewProvider {
     static var previews: some View {
-        DailyView(trainingHabits: .constant(TrainingHabit.sampleData), measurements: Measurement.sampleData)
+        DailyView(trainingHabits: .constant(TrainingHabit.sampleData))
     }
 }
 

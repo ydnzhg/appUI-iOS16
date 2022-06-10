@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-let today = "5/7"
-
-let exampleDates = ["5/1", "5/2", "5/3", "5/4", "5/5", "5/6", "5/7"]
-
 struct AppView: View {
     
     @Binding var user: User
@@ -27,8 +23,6 @@ struct AppView: View {
     
     @State private var isPresentingInfoEditView = true
     @State private var isPresentingCalendarView = false
-
-    let measurements: [Measurement]
     
     var body: some View {
         VStack {
@@ -37,7 +31,7 @@ struct AppView: View {
                 switch selectedTabIndex {
                 case 0:
                     NavigationView {
-                        DailyView(trainingHabits: $trainingHabits, measurements: measurements)
+                        DailyView(trainingHabits: $trainingHabits)
                             .navigationTitle("Training Habits")
                             .toolbar {
                                 DatePicker("", selection: $date, displayedComponents: .date)
@@ -90,6 +84,6 @@ struct AppView: View {
 
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView(user: .constant(User.sampleData), trainingHabits: .constant(TrainingHabit.sampleData), workoutInfo: .constant(WorkoutInfo.blankSampleData), measurements: Measurement.sampleData)
+        AppView(user: .constant(User.sampleData), trainingHabits: .constant(TrainingHabit.sampleData), workoutInfo: .constant(WorkoutInfo.blankSampleData))
     }
 }

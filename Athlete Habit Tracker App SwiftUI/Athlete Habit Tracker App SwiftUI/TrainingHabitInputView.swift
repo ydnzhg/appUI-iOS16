@@ -10,11 +10,7 @@ import SwiftUI
 struct TrainingHabitInputView: View {
     
     @Binding var trainingHabits: [TrainingHabit]
-    let measurements: [Measurement]
 
-    @State private var currentWeight = 0
-    @State private var currentHeartRate = 0
-    
     var body: some View {
         ScrollView {
             VStack(spacing: 15) {
@@ -38,7 +34,7 @@ struct TrainingHabitInputView: View {
 
 struct TrainingHabitInputView_Previews: PreviewProvider {
     static var previews: some View {
-        TrainingHabitInputView(trainingHabits: .constant(TrainingHabit.sampleData), measurements: Measurement.sampleData)
+        TrainingHabitInputView(trainingHabits: .constant(TrainingHabit.sampleData))
     }
 }
 
