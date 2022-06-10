@@ -29,7 +29,7 @@ struct ProfileView: View {
                     .clipShape(Circle())
                 Text(user.name)
                     .font(.title.bold())
-                    .shadow(color: Color.black.opacity(0.2), radius: 2, x: 0, y: 2)
+                    .shadow(color: Color.black.opacity(0.2), radius: 1, x: 0, y: 1)
             }
                         
             Spacer(minLength: 10)

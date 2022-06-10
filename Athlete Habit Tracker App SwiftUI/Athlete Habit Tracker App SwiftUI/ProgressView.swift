@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Charts
 
 struct ProgressView: View {
     
@@ -13,63 +14,88 @@ struct ProgressView: View {
     
     @State private var selectedTime: Int = 0
     
-    @State private var selectedHabit: Int = 0
+    @Binding var selectedHabit: Int
     
+    let daysOfTheWeek = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
     var body: some View {
-        VStack {
-            Picker(selection: $selectedTime, label: Text("")) {
-                Text("Last Week").tag(0)
-                Text("Last 2 Weeks").tag(1)
-                Text("Last Month").tag(2)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .padding(.horizontal)
-                    
-            // add dates
-            /*
-            CardView {
-                ChartLabel("", type: .title)
-                BarChart()
-            }
-            .data(trainingHabits[selectedHabit].lastWeek.map { Double($0) })
-            .chartStyle(ChartStyle(backgroundColor: .white, foregroundColor: ColorGradient(Color.highblue.opacity(0.4), Color.highblue.opacity(0.7))))
-            .frame(height: 300)
-            .padding(.horizontal)
-             */
+        
+        ScrollView {
+            VStack {
+                Picker(selection: $selectedTime, label: Text("")) {
+                    Text("Last Week").tag(0)
+                    Text("Last 2 Weeks").tag(1)
+                    Text("Last Month").tag(2)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(.horizontal)
+                            
+                let barData: [(day: String, value: Int)] = [
+                    (day: daysOfTheWeek[0], value: trainingHabits[selectedHabit].lastWeek[0]),
+                    (day: daysOfTheWeek[1], value: trainingHabits[selectedHabit].lastWeek[1]),
+                    (day: daysOfTheWeek[2], value: trainingHabits[selectedHabit].lastWeek[2]),
+                    (day: daysOfTheWeek[3], value: trainingHabits[selectedHabit].lastWeek[3]),
+                    (day: daysOfTheWeek[4], value: trainingHabits[selectedHabit].lastWeek[4]),
+                    (day: daysOfTheWeek[5], value: trainingHabits[selectedHabit].lastWeek[5]),
+                    (day: daysOfTheWeek[6], value: trainingHabits[selectedHabit].lastWeek[6])
+                ]
+                
+                Chart {
+                    ForEach(barData, id: \.day) {
+                        if trainingHabits[selectedHabit].type == "trainingHabit" {
+                            BarMark(x: .value("Day", $0.day), y: .value("Amount", $0.value))
+                                .foregroundStyle(Color.highblue.gradient)
+                                .cornerRadius(5)
+                        }
+                        else {
+                            LineMark(x: .value("Day", $0.day), y: .value("Amount", $0.value))
+                                .foregroundStyle(Color.highblue.gradient)
+                                .interpolationMethod(.catmullRom)
+                        }
+                    }
+                }
+                .padding()
+                .frame(height: 250)
             
-            Picker(
-                selection: $selectedHabit,
-                label:
-                    HStack {
-                        Text("Habit: ")
-                        Text("\(trainingHabits[selectedHabit].title)")
+                Grid {
+                    GridRow {
+                        Text("Date")
+                            .frame(width: 100)
+                        Text("\(trainingHabits[selectedHabit].units.capitalized)")
+                            .frame(width: 100)
+                        Text("Goal Met")
+                            .frame(width: 100)
                     }
                     .font(.title3.bold())
-                    .foregroundColor(.fusionred)
-                    .padding()
-                    .background(Color.flirtacious)
+                    .foregroundColor(.white)
+                    .padding(5)
+                    .background(Color.highblue.gradient)
                     .cornerRadius(10)
-                ,
-                content: {
-                    Text("\(trainingHabits[0].title)").tag(0)
-                    Text("\(trainingHabits[1].title)").tag(1)
-                    Text("\(trainingHabits[2].title)").tag(2)
-                    Text("\(trainingHabits[3].title)").tag(3)
-                    Text("\(trainingHabits[4].title)").tag(4)
-                    Text("\(trainingHabits[5].title)").tag(5)
-                    Text("\(trainingHabits[6].title)").tag(6)
-                    Text("\(trainingHabits[7].title)").tag(7)
-                })
-            .pickerStyle(MenuPickerStyle())
-            
-            Spacer()
-            
+                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+                    ForEach(0..<7) { num in
+                        GridRow {
+                            Text("\(daysOfTheWeek[num])")
+                            Text("\(trainingHabits[selectedHabit].lastWeek[num])")
+                            Text(trainingHabits[selectedHabit].lastWeek[num] >= trainingHabits[selectedHabit].goal ? "Yes" : "No")
+                                .foregroundColor(trainingHabits[selectedHabit].lastWeek[num] >= trainingHabits[selectedHabit].goal ? Color.reptilegreen : Color.fusionred)
+                        }
+                        .font(.body.bold())
+                        .padding(1)
+                        Divider()
+        
+                    }
+                }
+                .padding()
+                
+                Spacer()
+                
+            }
         }
     }
 }
 
 struct ProgressView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressView(trainingHabits: .constant(TrainingHabit.sampleData))
+        ProgressView(trainingHabits: .constant(TrainingHabit.sampleData), selectedHabit: .constant(0))
     }
 }

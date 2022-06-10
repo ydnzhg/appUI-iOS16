@@ -54,6 +54,7 @@ struct NameEditTextField: View {
                 .foregroundColor(.white)
                 .background(Color.fusionred)
                 .clipShape(Circle())
+                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
             TextField(label, text: $value)
                 .padding()
                 .padding(.leading, 60)
@@ -62,7 +63,6 @@ struct NameEditTextField: View {
                 .clipShape(Capsule())
         }
         .padding(.horizontal)
-        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
     }
 }
 
@@ -80,6 +80,7 @@ struct GenderPicker: View {
                 .foregroundColor(.white)
                 .background(Color.fusionred)
                 .clipShape(Circle())
+                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
             HStack {
                 Text(label)
                     .foregroundColor(Color.black.opacity(0.7))
@@ -99,7 +100,6 @@ struct GenderPicker: View {
             .clipShape(Capsule())
         }
         .padding(.horizontal)
-        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
     }
 }
 
@@ -119,6 +119,8 @@ struct InfoEditTextField: View {
                 .foregroundColor(.white)
                 .background(Color.fusionred)
                 .clipShape(Circle())
+                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
+
             HStack {
                 Text(placeholder)
                     .foregroundColor(Color.black.opacity(0.7))
@@ -139,7 +141,6 @@ struct InfoEditTextField: View {
             .clipShape(Capsule())
         }
         .padding(.horizontal)
-        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
     }
 }
 

@@ -53,6 +53,7 @@ struct TrainingHabitGoalTextField: View {
                 .foregroundColor(.white)
                 .background(trainingHabit.palette.mainColor)
                 .clipShape(Circle())
+                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
             HStack {
                 Text("\(trainingHabit.title) Goal:")
                     .foregroundColor(Color.black.opacity(0.7))
@@ -69,7 +70,6 @@ struct TrainingHabitGoalTextField: View {
             .clipShape(Capsule())
         }
         .padding(.horizontal)
-        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
     }
 }
 

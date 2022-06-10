@@ -14,6 +14,8 @@ struct AppView: View {
     @Binding var trainingHabits: [TrainingHabit]
     
     @Binding var workoutInfo: WorkoutInfo
+    
+    @State private var selectedHabit: Int = 0
 
     @State private var date = Date()
     
@@ -46,11 +48,37 @@ struct AppView: View {
                             }
                     }
                 case 2:
-                    LoadCapacityPredictionView(trainingHabits: $trainingHabits, workoutInfo: $workoutInfo)
+                    NavigationView {
+                        LoadCapacityPredictionView(trainingHabits: $trainingHabits, workoutInfo: $workoutInfo)
+                            .navigationTitle("Load Capacity")
+                    }
                 case 3:
                     NavigationView {
-                        ProgressView(trainingHabits: $trainingHabits)
+                        ProgressView(trainingHabits: $trainingHabits, selectedHabit: $selectedHabit)
                             .navigationTitle("Progress")
+                            .toolbar {
+                                Picker(
+                                    selection: $selectedHabit,
+                                    label:
+                                        HStack {
+                                            Text("Habit: ")
+                                            Text("\(trainingHabits[selectedHabit].title)")
+                                        }
+                                    ,
+                                    content: {
+                                        Text("\(trainingHabits[0].title)").tag(0)
+                                        Text("\(trainingHabits[1].title)").tag(1)
+                                        Text("\(trainingHabits[2].title)").tag(2)
+                                        Text("\(trainingHabits[3].title)").tag(3)
+                                        Text("\(trainingHabits[4].title)").tag(4)
+                                        Text("\(trainingHabits[5].title)").tag(5)
+                                        Text("\(trainingHabits[6].title)").tag(6)
+                                        Text("\(trainingHabits[7].title)").tag(7)
+                                    })
+                                .pickerStyle(MenuPickerStyle())
+                                .background(Color(.systemGray6))
+                                .cornerRadius(10)
+                            }
                     }
                 case 4:
                     ProfileView(trainingHabits: $trainingHabits, user: $user)
